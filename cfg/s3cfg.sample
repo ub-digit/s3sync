@@ -1,0 +1,8 @@
+[default]
+access_key = S3-ACCESS-KEY
+secret_key = S3-SECRET-KEY
+check_ssl_certificate = False
+guess_mime_type = True
+host_base = S3-HOST-BASE
+host_bucket = S3-HOST-BUCKET
+use_https = True

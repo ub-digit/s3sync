@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  s3sync:
+    image: docker.ub.gu.se/s3sync:${GIT_REVISION}
+    volumes:
+      - ${STORE_HOST_PATH}:${STORE_CONTAINER_PATH}
+      - ${S3CFG_HOST_PATH}:${S3CFG_CONTAINER_PATH}
+    environment:
+      CFGPATH: ${S3CFG_CONTAINER_PATH}
+      SRCPATH: ${STORE_CONTAINER_PATH}
+      DSTPATH: ${TARGET_S3_BUCKET_PATH}
+      S3EXTRA_PARAMS: ${S3EXTRA_PARAMS}
